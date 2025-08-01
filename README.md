@@ -1,46 +1,95 @@
-# Getting Started with Create React App
+# Tetris Game - React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Um jogo de Tetris moderno e responsivo construído com React, TypeScript e Tailwind CSS.
 
-## Available Scripts
+## Recursos
 
-In the project directory, you can run:
+- 🎮 **Controles intuitivos** (teclado e mobile)
+- 👻 **Peça fantasma** (mostra onde a peça atual vai cair)
+- 📊 **Estatísticas detalhadas** (pontuação, linhas, nível, peças usadas)
+- 🏆 **Recorde pessoal** (salvo localmente)
+- ⚙️ **Configurações personalizáveis** (tamanho da grade, peça fantasma)
+- 📱 **Design responsivo** (funciona em desktop e mobile)
 
-### `npm start`
+## Como Jogar
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Controles do Teclado
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- **← →** - Mover para esquerda/direita
+- **↓** - Acelerar queda
+- **↑ ou Espaço** - Rotacionar peça
+- **D** - Queda rápida (drop instantâneo)
+- **P** - Pausar o jogo
+- **M** - Silenciar efeitos sonoros
 
-### `npm test`
+### Controles Mobile
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Botões na tela para todas as ações
 
-### `npm run build`
+## Configurações
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Peça fantasma**: Ativa/desativa a visualização da peça fantasma
+- **Tamanho da grade**: Escolha entre pequeno, médio ou grande
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Tecnologias Utilizadas
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- React
+- TypeScript
+- Tailwind CSS
+- Lucide React (ícones)
 
-### `npm run eject`
+## Instalação
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1. Clone o repositório:
+```bash
+git clone https://github.com/seu-usuario/tetris-react.git
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. Instale as dependências:
+```bash
+cd tetris-react
+npm install
+npm install lucide-react
+npm install -D tailwindcss@3.3.0 postcss autoprefixer
+npx tailwindcss init -p
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+4. Configurações necessárias:
+```bash
+**tailwind.config.js**:
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+**src/index.css**:
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+O arquivo index.css deve estar em src/index.css e conter apenas as três diretivas do Tailwind
 
-## Learn More
+**postcss.config.js**:
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+};
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. Execute o projeto:
+```bash
+npm start
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Contribuição
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar pull requests.
+
+## Licença
+
+MIT
